@@ -1,6 +1,7 @@
 ---
 - name: setup HTTPD on node1 server
   hosts: node1
+  become: yes
 
   tasks:
   - name: Install HTTPD
