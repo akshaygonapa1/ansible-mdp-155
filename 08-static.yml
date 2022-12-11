@@ -1,0 +1,11 @@
+---
+- name: Deploy Info page on all server
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copy page
+    copy:
+      src: info.html
+      dest: /var/www/html/info.html
+...
