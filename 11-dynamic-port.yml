@@ -1,0 +1,13 @@
+---
+- name: Modify ports on web server
+  hosts: node3
+  become: yes
+  vars:
+    custom_port: 9090
+
+  tasks:
+  - name: copy Dynamic config
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf 
+...
