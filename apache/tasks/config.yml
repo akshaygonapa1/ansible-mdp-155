@@ -1,0 +1,19 @@
+---
+  - name: copy page
+    copy:
+      src: info.html
+      dest: /var/www/html/info.html
+
+  - name: copy Dynamic page
+    template:
+      src: info.j2
+      dest: /var/www/html/dynamic.html
+
+  
+  - name: copy Dynamic config
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify: 
+    - Restart HTTPD
+...
